@@ -1,0 +1,22 @@
+{
+  "name": "LineageOS Dev",
+  "image": "ubuntu:22.04",
+  "features": {
+    "ghcr.io/devcontainers/features/java:1": {
+      "version": "11"
+    }
+  },
+  "postCreateCommand": "apt update && apt install -y bc bison build-essential curl flex git gperf libncurses5-dev libssl-dev libxml2-utils unzip zip zlib1g-dev python-is-python3 openjdk-11-jdk repo rsync clang lz4 lz4-tool",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.cpptools",
+        "esbenp.prettier-vscode"
+      ]
+    }
+  },
+  "mounts": [
+    "source=/workspaces,target=/rom,type=bind"
+  ],
+  "remoteUser": "root"
+}
